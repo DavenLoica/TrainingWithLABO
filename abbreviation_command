@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+        name = dav
+        email = daveloic@yahoo.fr
+[alias]
+        st = status
+        ci = commit
+        co = checkout
+        cim = commit -m
+        lgg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+        lg = log --oneline --first-parent --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+        lg-feat = !git lg develop..
+        lg-local = !git lg @{push}..
+        lg-server = !git lg ..@{push}
+        unstage = reset HEAD
+        last = log -1 HEAD
+        diff-file = diff --name-status
+        diff-feat = diff develop..
+        pullr = pull --rebase=preserve
+        pullff = pull --ff-only
+        ff-to = merge --ff-only
+        mrg = merge --no-ff
+[color]
+        ui = true
+[push]
+        default = simple
+[credential]
+        helper = cache --timeout=783600
